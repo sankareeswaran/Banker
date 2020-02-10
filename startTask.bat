@@ -1,0 +1,1 @@
+java -jar BankMgt-0.0.1-SNAPSHOT.jar Balance
