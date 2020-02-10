@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: BankMgt
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: X169393
+Implementation-Vendor-Id: com.hrb.bankmgt
+Build-Jdk: 1.8.0_232
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-bo
+ ot-starter-parent/BankMgt
+Created-By: Maven Integration for Eclipse
+

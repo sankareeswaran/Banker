@@ -1,0 +1,12 @@
+com\hrb\taskmanager\TaskInitializerApp$1.class
+com\hrb\taskmanager\task\account\AccountDetail.class
+com\hrb\taskmanager\task\account\Person.class
+com\hrb\taskmanager\task\activity\DepositTask.class
+com\hrb\taskmanager\task\account\Treasury.class
+com\hrb\taskmanager\task\account\Address.class
+com\hrb\taskmanager\task\account\PersonalDetail.class
+com\hrb\taskmanager\task\core\ValidatorActivity.class
+com\hrb\taskmanager\TaskInitializerApp.class
+com\hrb\taskmanager\task\core\ActivityManager.class
+com\hrb\taskmanager\task\activity\WithdrawTask.class
+com\hrb\taskmanager\task\core\Activity.class

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+	<Property name="LOG_PATTERN"
+		value="%d{yyyy-MM-dd'T'HH:mm:ss.SSSZ} %-4relative [%thread] %-5level %logger{35} - %msg%n" />
+	<Property name="APP_LOG_ROOT" value="c:\\banktasks\\logs\\" />
+	<Property name="APP_LOG_MAX_FILE_SIZE" value="5MB" />
+	<Property name="APP_LOG_MAX_HIST" value="1" />
+	<Property name="APP_LOG_TOT_SIZE_CAPA" value="2GB" />
+	<Property name="APP_LOG_ALL_FILE_NAME" value="banktasks" />
+
+
+	<appender name="BANK_TASK_LOG_APPENDER" class="ch.qos.logback.core.rolling.RollingFileAppender">
+		<!-- Support multiple-JVM writing to the same log file -->
+		<prudent>true</prudent>
+		<file>${APP_LOG_ROOT}${APP_LOG_ALL_FILE_NAME}.log</file>
+		<rollingPolicy
+			class="ch.qos.logback.core.rolling.SizeAndTimeBasedRollingPolicy">
+			<!-- rollover daily -->
+			<fileNamePattern>${APP_LOG_ROOT}${APP_LOG_ALL_FILE_NAME}-%d{yyyy-MM-dd-HH-mm}.%i.log</fileNamePattern>
+			<!-- each file should be at most 50MB, keep 1 days worth of history, but at most 2GB -->
+			<maxFileSize>${APP_LOG_MAX_FILE_SIZE}</maxFileSize>
+			<maxHistory>${APP_LOG_MAX_HIST}</maxHistory>
+			<totalSizeCap>${APP_LOG_TOT_SIZE_CAPA}</totalSizeCap>
+		</rollingPolicy>
+		<encoder>
+			<pattern>${LOG_PATTERN}</pattern>
+		</encoder>
+	</appender>
+	<root level="INFO, ERROR, WARN">
+		<appender-ref ref="BANK_TASK_LOG_APPENDER" />
+	</root>
+	
+	<logger name="org.apache" level="ERROR" />
+	<logger name="ch.qos.logback" level="ERROR" />
+</configuration>
